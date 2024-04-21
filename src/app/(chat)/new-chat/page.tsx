@@ -1,5 +1,7 @@
-import React from "react";
+import Chat from "./chat";
 
-export default function page() {
-  return <div>page</div>;
+export const runtime = "edge";
+
+export default function Page() {
+  return <Chat />;
 }
