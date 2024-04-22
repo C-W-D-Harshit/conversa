@@ -20,6 +20,14 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Skeleton } from "../ui/skeleton";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -44,9 +52,26 @@ export default function Header() {
               <ChevronLeftIcon />
             </Button>
           ) : (
-            <Button variant={"outline"} size={"icon"} className="rounded-full">
-              <MenuIcon />
-            </Button>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button
+                  variant={"outline"}
+                  size={"icon"}
+                  className="rounded-full"
+                >
+                  <MenuIcon />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side={"left"}>
+                <SheetHeader>
+                  <SheetTitle>Are you absolutely sure?</SheetTitle>
+                  <SheetDescription>
+                    This action cannot be undone. This will permanently delete
+                    your account and remove your data from our servers.
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
           )}
           {path !== "/" ? (
             <h1 className="text-xl font-bold capitalize">
