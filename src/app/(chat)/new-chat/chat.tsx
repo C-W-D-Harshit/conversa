@@ -23,7 +23,7 @@ export default function MyComponent() {
       <div className="flex-grow flex flex-col">
         <MaxWidthWrapper className="flex-grow flex flex-col">
           {messages.length === 0 ? (
-            <div className="flex-grow w-full flex flex-col justify-center items-center">
+            <div className="flex-grow w-full flex flex-col justify-center items-center px-12">
               <div className="flex flex-col items-center w-full text-center p-6 bg-muted rounded-md space-y-4">
                 <SparklesIcon />
                 <div>
